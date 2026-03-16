@@ -1,4 +1,4 @@
-function plusOne(nums: number[]) {
+function plusOne(nums)  {
     const lastIndex = nums.length - 1;
 
     if (nums[lastIndex] === 9) {
@@ -21,9 +21,3 @@ function plusOne(nums: number[]) {
     }
     return nums;
 }
-
-// deno-lint-ignore prefer-const
-let ans = plusOne([9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]);
-console.log(ans);
-
-
