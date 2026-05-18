@@ -1,26 +1,21 @@
-type int = number;
-
-function binarySearch(nums: int[], target: int, low: int, high: int) {
-    if (low > high) {
-        return -1;
-    }
-    const middle = Math.floor(low + (high - low) / 2);
-
-    if (nums[middle] === target) {
-        return middle;
-    } else if (target <= nums[middle]) {
-        return binarySearch(nums, target, low, middle);
-    } else if (target >= nums[middle]) {
-        return binarySearch(nums, target, middle, high);
-    }
-    return -1;
+function search(nums: number[], target: number): number {
+	if (nums.length === 0) {
+		return -1;
+	}
+	let low = nums[0];
+	let high = nums.length - 1;
+	if (low > high) {
+		return -1;
+	}
+	const mid = Math.floor(low + (high - low) / 2);
+	if (nums[mid] === target) {
+		return mid;
+	} else if (target > nums[mid]) {
+		console.log(nums.slice(mid + 1, high));
+		return search(nums.slice(mid + 1, high), target);
+	} else {
+		console.log(nums.slice(low, mid - 1));
+		return search(nums.slice(low, mid - 1), target);
+	}
 }
-
-function search(arr: int[], target: int) {
-    binarySearch(arr, target, 0, arr.length - 1);
-}
-
-const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const ans = search(nums, 12);
-
-console.log(ans);
+search([-1, 0, 3, 5, 9, 12], 2);
