@@ -2,7 +2,7 @@ function genrateList(): number[] {
     const random0 = Math.floor(Math.random() * 100);
     const random1 = Math.floor(Math.random() * 100);
 
-    let list = [0];
+    const list = [0];
 
     for (let index = 0; index < random0; index++) {
         list.push(0);
