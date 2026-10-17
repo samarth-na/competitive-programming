@@ -22,8 +22,3 @@ int count(vector<int> &nums) {
     }
     return count.max_bucket_count();
 }
-
-int main() {
-    vector<int> nums = {1, 1, 1, 4, 5, 6, 7, 8, 9, 10};
-    cout << count(nums) << endl;
-}
