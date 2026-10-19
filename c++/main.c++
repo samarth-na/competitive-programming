@@ -1,4 +1,6 @@
 #include "./algo/bubble.c++"
+#include "./algo/quick.cpp"
+
 #include <iostream>
 int main() {
     vector<int> nums = {5, 7, 1, 4, 9, 1, 7, 1, 4, 5};
