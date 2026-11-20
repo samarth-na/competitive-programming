@@ -4,21 +4,23 @@
 using namespace std;
 
 bool hasduplicate_set(vector<int> &nums) {
-  unordered_set<int> seen; // declare the set
-  for (int i : nums) {
-    if (seen.count(i)) {
-      return true;
+    unordered_set<int> seen; // declare the set
+
+    nums.push_back(1);
+    for (int i : nums) {
+        if (seen.count(i)) {
+            return true;
+        }
+        seen.insert(i);
     }
-    seen.insert(i);
-  }
-  return false;
+    return false;
 }
 bool hasduplicate_sort(vector<int> &nums) {
-  sort(nums.begin(), nums.end());
-  for (int i = 0; i < nums.size(); i++) {
-    if (nums[i] == nums[i + 1]) {
-      return true;
+    sort(nums.begin(), nums.end());
+    for (int i = 0; i < nums.size(); i++) {
+        if (nums[i] == nums[i + 1]) {
+            return true;
+        }
     }
-  }
-  return false;
+    return false;
 }
